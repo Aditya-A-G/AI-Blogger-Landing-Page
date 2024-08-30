@@ -21,6 +21,11 @@ export const Footer = () => {
           <Link href="https://merchant.razorpay.com/policy/OqNp0Cn2uJUKWl/refund">Cancellation & Refund</Link>
 
         </nav>
+        <div className="mt-5">
+          <h2 className="text-lg font-bold">Contact us</h2>
+          <p className="mt-2">+91 9136795245</p>
+          <p>adityaghadge360@gmail.com</p>
+        </div>
         <div className="flex justify-center gap-6 mt-6">
           <Link href="https://x.com/AdityaGhad47567">
             <SocialX />
