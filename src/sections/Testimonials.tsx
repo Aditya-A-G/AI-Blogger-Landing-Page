@@ -1,3 +1,4 @@
+"use client";
 import avatar1 from "@/assets/avatar-1.png";
 import avatar2 from "@/assets/avatar-2.png";
 import avatar3 from "@/assets/avatar-3.png";
@@ -7,64 +8,152 @@ import avatar6 from "@/assets/avatar-6.png";
 import avatar7 from "@/assets/avatar-7.png";
 import avatar8 from "@/assets/avatar-8.png";
 import avatar9 from "@/assets/avatar-9.png";
+import clsx from "clsx";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import React from "react";
 
 const testimonials = [
   {
-    text: "As a seasoned designer always on the lookout for innovative tools, Framer.com instantly grabbed my attention.",
+    text: "This AI-powered blogging tool has revolutionized how I create content, making it faster and more engaging.",
     imageSrc: avatar1.src,
-    name: "Jamie Rivera",
-    username: "@jamietechguru00",
+    name: "Alex Morgan",
+    username: "@alexwrites",
   },
   {
-    text: "Our team's productivity has skyrocketed since we started using this tool. ",
+    text: "Our content creation process is now more streamlined and efficient, thanks to this innovative app.",
     imageSrc: avatar2.src,
-    name: "Josh Smith",
-    username: "@jjsmith",
+    name: "Sam Lee",
+    username: "@samblogger",
   },
   {
-    text: "This app has completely transformed how I manage my projects and deadlines.",
+    text: "Managing and publishing blog posts has never been this easy. The AI recommendations are spot-on.",
     imageSrc: avatar3.src,
-    name: "Morgan Lee",
-    username: "@morganleewhiz",
+    name: "Jordan Smith",
+    username: "@jordanwrites",
   },
   {
-    text: "I was amazed at how quickly we were able to integrate this app into our workflow.",
+    text: "Integration was a breeze, and the AI tools are incredibly intuitive and helpful for crafting quality content.",
     imageSrc: avatar4.src,
-    name: "Casey Jordan",
-    username: "@caseyj",
+    name: "Taylor Brown",
+    username: "@taylorwrites",
   },
   {
-    text: "Planning and executing events has never been easier. This app helps me keep track of all the moving parts, ensuring nothing slips through the cracks.",
+    text: "This app simplifies blogging with AI-driven insights, making it easier to generate engaging content quickly.",
     imageSrc: avatar5.src,
-    name: "Taylor Kim",
-    username: "@taylorkimm",
+    name: "Casey Harris",
+    username: "@caseywrites",
   },
   {
-    text: "The customizability and integration capabilities of this app are top-notch.",
+    text: "The app's AI features have enhanced our content strategy and improved the overall quality of our posts.",
     imageSrc: avatar6.src,
-    name: "Riley Smith",
-    username: "@rileysmith1",
+    name: "Riley Davis",
+    username: "@rileydwrites",
   },
   {
-    text: "Adopting this app for our team has streamlined our project management and improved communication across the board.",
+    text: "Adopting this AI blogger app has transformed how we generate and manage content, boosting productivity.",
     imageSrc: avatar7.src,
-    name: "Jordan Patels",
-    username: "@jpatelsdesign",
+    name: "Morgan Taylor",
+    username: "@morgantwrites",
   },
   {
-    text: "With this app, we can easily assign tasks, track progress, and manage documents all in one place.",
+    text: "All-in-one solution for content creation—AI-powered, user-friendly, and highly effective.",
     imageSrc: avatar8.src,
-    name: "Sam Dawson",
-    username: "@dawsontechtips",
+    name: "Sam Wilson",
+    username: "@samwrites",
   },
   {
-    text: "Its user-friendly interface and robust features support our diverse needs.",
+    text: "The AI-driven suggestions and easy-to-use interface make this app indispensable for any serious blogger.",
     imageSrc: avatar9.src,
-    name: "Casey Harper",
-    username: "@casey09",
+    name: "Alex Lee",
+    username: "@alexblogger",
   },
 ];
 
+const firstColumn = testimonials.slice(0, 3);
+const secondColumn = testimonials.slice(3, 6);
+const thirdColumn = testimonials.slice(6, 9);
+
+const TestimonialColumn = (props: {
+  className?: string;
+  testimonials: typeof testimonials;
+  duration?: number;
+}) => {
+  return (
+    <div className={props.className}>
+      <motion.div
+        className="flex flex-col  gap-6 mt-10 pb-6"
+        animate={{ translateY: "-50%" }}
+        transition={{
+          duration: props.duration || 10,
+          repeat: Infinity,
+          ease: "linear",
+          repeatType: "loop",
+        }}
+      >
+        {[
+          ...new Array(2).fill(0).map((_, index) => (
+            <React.Fragment key={index}>
+              {props.testimonials.map(({ text, imageSrc, name, username }) => {
+                return (
+                  <div key={username} className="card">
+                    <div>{text}</div>
+                    <div className="flex items-center gap-2 mt-5">
+                      <Image
+                        src={imageSrc}
+                        alt={name}
+                        width={40}
+                        height={40}
+                        className="h-10 w-10 rounded-full"
+                      />
+                      <div className="flex flex-col">
+                        <div className="font-medium tracking-tight leading-5">
+                          {name}
+                        </div>
+                        <div className="leading-5 tracking-tight">
+                          {username}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </React.Fragment>
+          )),
+        ]}
+      </motion.div>
+    </div>
+  );
+};
+
 export const Testimonials = () => {
-  return null;
+  return (
+    <section className="bg-white">
+      <div className="container">
+        <div className="section-heading">
+          <div className="flex justify-center">
+            <div className="tag">Testimonials</div>
+          </div>
+          <h2 className="section-title mt-5">What our users say</h2>
+          <p className="section-description mt-5">
+            From intuitive design to powerful features, our app has become an
+            essential tool for users around the world.
+          </p>
+        </div>
+        <div className="flex justify-center mt-10 gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[738px] overflow-hidden">
+          <TestimonialColumn testimonials={firstColumn} duration={15} />
+          <TestimonialColumn
+            testimonials={secondColumn}
+            className="hidden md:block"
+            duration={19}
+          />
+          <TestimonialColumn
+            testimonials={thirdColumn}
+            className="hidden lg:block"
+            duration={17}
+          />
+        </div>
+      </div>
+    </section>
+  );
 };
