@@ -33,7 +33,7 @@ export const Header = () => {
               <MenuIcon className="w-1/2 md:hidden cursor-pointer" />
             </div>
             <nav className="hidden md:flex gap-6 text-black/60 items-center">
-              <Link href="/dashboard">Dashboard</Link>
+              <Link href="https://writer.adityacodes.tech/">Dashboard</Link>
               <Link href="#product">Product</Link>
               <Link href="#pricing">Pricing</Link>
 
@@ -70,7 +70,7 @@ export const Header = () => {
         </div>
         <ul className="flex flex-col items-center justify-between min-h-[250px]">
           <li className="border-b border-gray-400 hover:border-blue-400 my-8 uppercase">
-            <Link href="/dashboard" onClick={() => setIsNavOpen(false)}>
+            <Link href="https://writer.adityacodes.tech/" onClick={() => setIsNavOpen(false)}>
               Dashboard
             </Link>
           </li>

@@ -112,7 +112,7 @@ export const Pricing = () => {
                       inverse === true && "bg-white text-black"
                     )}
                   >
-                    <Link href="/dashboard">{buttonText}</Link>
+                    <Link href="https://writer.adityacodes.tech/">{buttonText}</Link>
                   </button>
                   <ul className="flex flex-col gap-5 mt-8">
                     {features.map((feature) => {

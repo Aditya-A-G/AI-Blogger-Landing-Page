@@ -13,7 +13,7 @@ export const Footer = () => {
           <Image src={logo} height={45} alt="Saas logo" className="relative" />
         </div>
         <nav className="flex flex-col md:flex-row md:justify-center gap-6 mt-6">
-          <Link href="/dashboard">Dashboard</Link>
+          <Link href="https://writer.adityacodes.tech/">Dashboard</Link>
           <Link href="#product">Product</Link>
           <Link href="#pricing">Pricing</Link>
           <Link href="https://www.freeprivacypolicy.com/live/578bf905-7095-4087-add3-7d3c73f88856">Privacy Policy</Link>

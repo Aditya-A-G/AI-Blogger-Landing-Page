@@ -45,7 +45,7 @@ export const CallToAction = () => {
         </div>
         <div className="flex gap-2 mt-10 justify-center">
           <button className="btn btn-primary">
-            <Link href="/dashboard">Get started now</Link>
+            <Link href="https://writer.adityacodes.tech/">Get started now</Link>
           </button>
           <button className="btn btn-text gap-1">
             <Link href="https://youtu.be/0ZnR9GssL5s">
