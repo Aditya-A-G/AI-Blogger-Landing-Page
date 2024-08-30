@@ -16,6 +16,10 @@ export const Footer = () => {
           <Link href="/dashboard">Dashboard</Link>
           <Link href="#product">Product</Link>
           <Link href="#pricing">Pricing</Link>
+          <Link href="https://www.freeprivacypolicy.com/live/578bf905-7095-4087-add3-7d3c73f88856">Privacy Policy</Link>
+          <Link href="https://merchant.razorpay.com/policy/OqNp0Cn2uJUKWl/terms">Terms & Conditions</Link>
+          <Link href="https://merchant.razorpay.com/policy/OqNp0Cn2uJUKWl/refund">Cancellation & Refund</Link>
+
         </nav>
         <div className="flex justify-center gap-6 mt-6">
           <Link href="https://x.com/AdityaGhad47567">
