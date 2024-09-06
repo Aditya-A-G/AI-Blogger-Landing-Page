@@ -38,7 +38,7 @@ export const Header = () => {
               <Link href="#pricing">Pricing</Link>
 
               <button className="bg-black text-white px-4 py-2 rounded-lg font-medium inline-flex justify-center items-center tracking-tight">
-                Get Started
+                <Link href="https://writer.adityacodes.tech/">Get Started</Link>
               </button>
             </nav>
           </div>
