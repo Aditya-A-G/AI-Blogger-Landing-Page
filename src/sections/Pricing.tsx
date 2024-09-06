@@ -7,7 +7,7 @@ import Link from "next/link";
 const pricingTiers = [
   {
     title: "Basic",
-    price: 10,
+    price: 849,
     credits: 50,
     buttonText: "Get started today",
     popular: false,
@@ -16,7 +16,7 @@ const pricingTiers = [
   },
   {
     title: "Pro",
-    price: 30,
+    price: 2512,
     credits: 200,
     buttonText: "Get started today",
     popular: true,
@@ -25,7 +25,7 @@ const pricingTiers = [
   },
   {
     title: "Enterprise",
-    price: 100,
+    price: 8400,
     credits: 750,
     buttonText: "Get started today",
     popular: false,
@@ -95,7 +95,7 @@ export const Pricing = () => {
                   </div>
                   <div className="flex items-baseline gap-1 mt-[30px]">
                     <span className="text-4xl font-bold tracking-tighter leading-none">
-                      {price}$
+                      {price} Rs
                     </span>
                     <span
                       className={clsx(
