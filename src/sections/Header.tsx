@@ -14,7 +14,7 @@ export const Header = () => {
     <header className="sticky top-0 backdrop-blur-sm z-20 ">
       <div className="flex justify-center items-center py-3 bg-black text-white text-sm">
         <div className="inline-flex gap-1 items-center">
-          <p className="text-xs">Boost your productivity</p>
+          <p className="text-xs"><Link href="https://writer.adityacodes.tech/">Boost your productivity</Link></p>
           <ArrowRight className="h-4 w-4 inline-flex justify-center items-center" />
         </div>
       </div>
