@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import clsx from "clsx";
 
@@ -19,6 +20,7 @@ export default function RootLayout({
     <html lang="en" className="relative scroll-smooth">
       <body className={clsx(dmSans.className, "antialiased bg-[#EAEEFE]")}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
